@@ -3,38 +3,580 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ふどうすん | Portfolio</title>
+  <title>不動産スマート査定 | 最短60秒で無料査定</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #1a5ccc;
+      --primary-deep: #0e3d8a;
+      --primary-light: #e8f0fe;
+      --primary-glow: #3b82f6;
+      --accent: #0891b2;
+      --surface: #ffffff;
+      --surface-alt: #f5f8fc;
+      --text: #1a2332;
+      --text-sub: #5a6a7e;
+      --text-muted: #94a3b8;
+      --border: #dde5ef;
+      --shadow: 0 4px 24px rgba(26,92,204,0.08);
+      --shadow-lg: 0 12px 48px rgba(26,92,204,0.12);
+      --radius: 16px;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Helvetica Neue', sans-serif; background: #0f0f0f; color: #fff; }
-    header { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-    header h1 { font-size: 4rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
-    header p { font-size: 1.2rem; color: #aaa; }
-    section { padding: 80px 40px; max-width: 900px; margin: 0 auto; }
-    h2 { font-size: 2rem; margin-bottom: 2rem; border-left: 4px solid #fff; padding-left: 1rem; }
-    .skills { display: flex; flex-wrap: wrap; gap: 12px; }
-    .skill { background: #1e1e1e; padding: 10px 20px; border-radius: 20px; font-size: 0.9rem; }
-    footer { text-align: center; padding: 40px; color: #555; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--surface);
+      color: var(--text);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+    .header.scrolled { box-shadow: var(--shadow); }
+    .header-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      color: var(--primary);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .logo-icon {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 16px;
+    }
+    .header-cta {
+      background: var(--primary); color: #fff;
+      border: none; border-radius: 100px;
+      padding: 10px 24px; font-size: 0.85rem; font-weight: 700;
+      cursor: pointer; font-family: 'Noto Sans JP', sans-serif;
+      transition: all 0.2s;
+    }
+    .header-cta:hover { background: var(--primary-deep); transform: translateY(-1px); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; padding: 120px 24px 80px;
+      display: flex; align-items: center; justify-content: center;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(26,92,204,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(8,145,178,0.05) 0%, transparent 50%),
+        var(--surface);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -200px; right: -200px;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,92,204,0.04), transparent 70%);
+    }
+    .hero-inner {
+      max-width: 1100px; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--primary-light); color: var(--primary);
+      padding: 6px 16px; border-radius: 100px;
+      font-size: 0.8rem; font-weight: 700; margin-bottom: 20px;
+    }
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--primary); border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900; line-height: 1.3;
+      letter-spacing: -0.02em; margin-bottom: 16px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc { font-size: 1.05rem; color: var(--text-sub); margin-bottom: 32px; }
+    .hero-stats { display: flex; gap: 32px; }
+    .hero-stat strong {
+      display: block; font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem; font-weight: 800; color: var(--primary);
+    }
+    .hero-stat small { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* CHAT */
+    .chat-container {
+      background: var(--surface); border-radius: var(--radius);
+      box-shadow: var(--shadow-lg); border: 1px solid var(--border);
+      overflow: hidden; max-width: 440px; width: 100%;
+    }
+    .chat-header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-deep));
+      color: #fff; padding: 18px 24px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .chat-avatar {
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,0.2); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-size: 20px;
+    }
+    .chat-header-text h3 { font-size: 0.95rem; font-weight: 700; }
+    .chat-header-text p { font-size: 0.75rem; opacity: 0.8; }
+    .chat-body {
+      height: 380px; overflow-y: auto; padding: 20px;
+      display: flex; flex-direction: column; gap: 12px;
+      background: var(--surface-alt); scroll-behavior: smooth;
+    }
+    .chat-body::-webkit-scrollbar { width: 4px; }
+    .chat-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .msg {
+      max-width: 85%; padding: 12px 16px; border-radius: 16px;
+      font-size: 0.9rem; line-height: 1.6;
+      animation: msg-in 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    @keyframes msg-in {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .msg.bot {
+      background: var(--surface); border: 1px solid var(--border);
+      align-self: flex-start; border-bottom-left-radius: 4px;
+    }
+    .msg.user {
+      background: var(--primary); color: #fff;
+      align-self: flex-end; border-bottom-right-radius: 4px;
+    }
+    .msg-options {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      animation: msg-in 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .msg-option {
+      background: var(--surface); border: 1.5px solid var(--primary);
+      color: var(--primary); padding: 8px 18px; border-radius: 100px;
+      font-size: 0.85rem; font-weight: 500; cursor: pointer;
+      transition: all 0.2s; font-family: 'Noto Sans JP', sans-serif;
+    }
+    .msg-option:hover {
+      background: var(--primary); color: #fff; transform: translateY(-1px);
+    }
+    .chat-input-area {
+      padding: 16px 20px; border-top: 1px solid var(--border);
+      display: flex; gap: 10px; background: var(--surface);
+    }
+    .chat-input {
+      flex: 1; border: 1.5px solid var(--border); border-radius: 100px;
+      padding: 10px 18px; font-size: 0.9rem; outline: none;
+      font-family: 'Noto Sans JP', sans-serif; transition: border 0.2s;
+    }
+    .chat-input:focus { border-color: var(--primary); }
+    .chat-input::placeholder { color: var(--text-muted); }
+    .chat-send {
+      width: 42px; height: 42px; background: var(--primary);
+      color: #fff; border: none; border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s; flex-shrink: 0;
+    }
+    .chat-send:hover { background: var(--primary-deep); transform: scale(1.05); }
+    .chat-send svg { width: 18px; height: 18px; }
+    .typing-indicator {
+      display: flex; gap: 4px; padding: 12px 16px; align-self: flex-start;
+    }
+    .typing-indicator span {
+      width: 8px; height: 8px; background: var(--text-muted);
+      border-radius: 50%; animation: typing 1.4s infinite;
+    }
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typing {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-6px); opacity: 1; }
+    }
+
+    /* FEATURES */
+    .features { padding: 100px 24px; background: var(--surface-alt); }
+    .section-label {
+      text-align: center; font-size: 0.8rem; font-weight: 700;
+      color: var(--primary); text-transform: uppercase;
+      letter-spacing: 0.15em; margin-bottom: 12px;
+    }
+    .section-title {
+      text-align: center; font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 900; margin-bottom: 60px;
+    }
+    .features-grid {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    }
+    .feature-card {
+      background: var(--surface); border-radius: var(--radius);
+      padding: 36px 28px; border: 1px solid var(--border); transition: all 0.3s;
+    }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .feature-icon {
+      width: 52px; height: 52px; background: var(--primary-light);
+      border-radius: 14px; display: flex; align-items: center;
+      justify-content: center; font-size: 24px; margin-bottom: 20px;
+    }
+    .feature-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+    .feature-card p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.7; }
+
+    /* FLOW */
+    .flow { padding: 100px 24px; }
+    .flow-steps {
+      max-width: 800px; margin: 0 auto;
+      display: flex; flex-direction: column;
+    }
+    .flow-step { display: flex; gap: 28px; align-items: flex-start; }
+    .flow-step-line {
+      display: flex; flex-direction: column; align-items: center; flex-shrink: 0;
+    }
+    .flow-num {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem;
+    }
+    .flow-connector {
+      width: 2px; height: 60px;
+      background: linear-gradient(to bottom, var(--primary), var(--border));
+    }
+    .flow-content { padding-bottom: 48px; }
+    .flow-content h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
+    .flow-content p { color: var(--text-sub); font-size: 0.9rem; }
+
+    /* CTA */
+    .cta-section {
+      padding: 100px 24px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-deep));
+      text-align: center; color: #fff; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 30% 50%, rgba(255,255,255,0.08), transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(255,255,255,0.05), transparent 40%);
+    }
+    .cta-section h2 {
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      font-weight: 900; margin-bottom: 16px; position: relative;
+    }
+    .cta-section p {
+      opacity: 0.85; font-size: 1.05rem; margin-bottom: 36px; position: relative;
+    }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: var(--primary);
+      border: none; border-radius: 100px;
+      padding: 16px 40px; font-size: 1.05rem; font-weight: 700;
+      cursor: pointer; transition: all 0.2s;
+      font-family: 'Noto Sans JP', sans-serif; position: relative;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+
+    /* FOOTER */
+    .footer {
+      padding: 40px 24px; text-align: center;
+      color: var(--text-muted); font-size: 0.82rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* RESULT */
+    .result-card {
+      background: linear-gradient(135deg, #f0f7ff, #e8f4f8);
+      border-radius: 12px; padding: 20px; border: 1px solid var(--primary);
+      animation: msg-in 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      align-self: flex-start; max-width: 90%;
+    }
+    .result-card .result-label {
+      font-size: 0.75rem; color: var(--primary); font-weight: 700; margin-bottom: 4px;
+    }
+    .result-card .result-price {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem; font-weight: 800; color: var(--primary-deep); margin-bottom: 8px;
+    }
+    .result-card .result-note {
+      font-size: 0.78rem; color: var(--text-sub); line-height: 1.5;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-stats { justify-content: center; }
+      .chat-container { max-width: 100%; margin: 0 auto; }
+      .features-grid { grid-template-columns: 1fr; max-width: 400px; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>ふどうすん</h1>
-    <p>Developer / Creator</p>
-  </header>
-  <section>
-    <h2>About</h2>
-    <p style="color:#aaa; line-height:1.8;">はじめまして。ふどうすんです。GitとWebの勉強中です。</p>
-  </section>
-  <section>
-    <h2>Skills</h2>
-    <div class="skills">
-      <span class="skill">HTML</span>
-      <span class="skill">CSS</span>
-      <span class="skill">Git</span>
-      <span class="skill">GitHub</span>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">🏠</div>
+      スマート査定
     </div>
-  </section>
-  <footer>© 2026 ふどうすん</footer>
+    <button class="header-cta" onclick="scrollToChat()">無料で査定する</button>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">完全無料・個人情報不要</div>
+      <h1>たった<span>60秒</span>で<br>あなたの不動産を<br><span>AI査定</span></h1>
+      <p class="hero-desc">チャットに答えるだけで、物件の概算価格をその場で確認。面倒な入力フォームは一切ありません。</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>12,000<small style="font-size:0.9rem">+</small></strong>
+          <small>査定実績</small>
+        </div>
+        <div class="hero-stat">
+          <strong>98<small style="font-size:0.9rem">%</small></strong>
+          <small>満足度</small>
+        </div>
+        <div class="hero-stat">
+          <strong>60<small style="font-size:0.9rem">秒</small></strong>
+          <small>かんたん査定</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-container" id="chat">
+      <div class="chat-header">
+        <div class="chat-avatar">🤖</div>
+        <div class="chat-header-text">
+          <h3>AI査定アシスタント</h3>
+          <p>オンライン — 通常すぐに応答</p>
+        </div>
+      </div>
+      <div class="chat-body" id="chatBody"></div>
+      <div class="chat-input-area" id="chatInputArea" style="display:none;">
+        <input type="text" class="chat-input" id="chatInput" placeholder="入力してください…">
+        <button class="chat-send" id="chatSendBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <p class="section-label">Features</p>
+  <h2 class="section-title">選ばれる3つの理由</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>最短60秒で完了</h3>
+      <p>チャット形式だから、質問に答えるだけ。従来の査定フォームのような面倒な入力は不要です。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <h3>個人情報不要</h3>
+      <p>電話番号やメールアドレスの入力なし。営業電話が来ることもありません。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>AIデータ分析</h3>
+      <p>過去の取引データと最新の市場動向をAIが分析し、精度の高い査定額を算出します。</p>
+    </div>
+  </div>
+</section>
+
+<section class="flow">
+  <p class="section-label">How it works</p>
+  <h2 class="section-title">査定のながれ</h2>
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-step-line"><div class="flow-num">1</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <h3>物件の種類を選ぶ</h3>
+        <p>マンション・戸建て・土地など、物件タイプを選択します。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-line"><div class="flow-num">2</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <h3>物件情報をチャットで入力</h3>
+        <p>エリア・広さ・築年数などをチャットで回答するだけ。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-line"><div class="flow-num">3</div></div>
+      <div class="flow-content">
+        <h3>査定結果をその場で確認</h3>
+        <p>AIがデータを分析し、概算価格をすぐにお知らせします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>まずは気軽に、<br>あなたの不動産の価値を知ろう</h2>
+  <p>完全無料・個人情報不要・たった60秒で完了</p>
+  <button class="cta-btn" onclick="scrollToChat()">無料で査定を始める →</button>
+</section>
+
+<footer class="footer">
+  <p>© 2026 スマート査定 All Rights Reserved.　|　※査定額は概算です。正確な金額は不動産会社にご相談ください。</p>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
+});
+function scrollToChat() {
+  document.getElementById('chat').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+const chatBody = document.getElementById('chatBody');
+const chatInput = document.getElementById('chatInput');
+const chatInputArea = document.getElementById('chatInputArea');
+const chatSendBtn = document.getElementById('chatSendBtn');
+
+let step = 0;
+let answers = {};
+
+const flow = [
+  { bot: 'こんにちは！🏠\nAI査定アシスタントです。\nいくつかの質問に答えるだけで、不動産の概算価格をお伝えします。' },
+  { bot: 'まず、物件の種類を教えてください。', options: ['マンション', '戸建て', '土地'], key: 'type' },
+  { bot: 'エリアはどちらですか？', options: ['東京23区', '東京市部', '神奈川', '千葉', '埼玉', 'その他'], key: 'area' },
+  { bot: '広さ（㎡）を教えてください。\n例: 65', input: true, key: 'size' },
+  { bot: '築年数を教えてください。', options: ['新築〜5年', '6〜10年', '11〜20年', '21〜30年', '31年以上'], key: 'age' },
+  { bot: '最寄り駅までの距離は？', options: ['徒歩5分以内', '徒歩10分以内', '徒歩15分以内', '徒歩20分以上'], key: 'station' },
+];
+
+function addMsg(text, type) {
+  return new Promise(resolve => {
+    const div = document.createElement('div');
+    div.className = 'msg ' + type;
+    div.innerHTML = text.replace(/\n/g, '<br>');
+    chatBody.appendChild(div);
+    chatBody.scrollTop = chatBody.scrollHeight;
+    setTimeout(resolve, 100);
+  });
+}
+
+function addOptions(options) {
+  const wrap = document.createElement('div');
+  wrap.className = 'msg-options';
+  options.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'msg-option';
+    btn.textContent = opt;
+    btn.onclick = () => handleAnswer(opt);
+    wrap.appendChild(btn);
+  });
+  chatBody.appendChild(wrap);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function showTyping() {
+  const div = document.createElement('div');
+  div.className = 'typing-indicator'; div.id = 'typing';
+  div.innerHTML = '<span></span><span></span><span></span>';
+  chatBody.appendChild(div);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+function removeTyping() { const t = document.getElementById('typing'); if (t) t.remove(); }
+function showInput() { chatInputArea.style.display = 'flex'; chatInput.focus(); }
+function hideInput() { chatInputArea.style.display = 'none'; chatInput.value = ''; }
+
+function calcPrice() {
+  let base = 3000;
+  if (answers.type === 'マンション') base *= 1.0;
+  else if (answers.type === '戸建て') base *= 1.3;
+  else base *= 0.6;
+  const am = { '東京23区': 1.8, '東京市部': 1.2, '神奈川': 1.1, '千葉': 0.85, '埼玉': 0.85, 'その他': 0.7 };
+  base *= (am[answers.area] || 1);
+  base *= ((parseFloat(answers.size) || 65) / 65);
+  const ad = { '新築〜5年': 1.0, '6〜10年': 0.88, '11〜20年': 0.75, '21〜30年': 0.6, '31年以上': 0.45 };
+  base *= (ad[answers.age] || 0.75);
+  const sb = { '徒歩5分以内': 1.15, '徒歩10分以内': 1.0, '徒歩15分以内': 0.92, '徒歩20分以上': 0.82 };
+  base *= (sb[answers.station] || 1);
+  base = Math.round(base / 10) * 10;
+  return { price: base, low: Math.round(base * 0.9 / 10) * 10, high: Math.round(base * 1.1 / 10) * 10 };
+}
+
+function fmtPrice(n) {
+  if (n >= 10000) return (n / 10000).toFixed(1).replace(/\.0$/, '') + '億';
+  return n.toLocaleString();
+}
+
+async function showResult() {
+  showTyping();
+  await new Promise(r => setTimeout(r, 1800));
+  removeTyping();
+  const { low, high, price } = calcPrice();
+  const card = document.createElement('div');
+  card.className = 'result-card';
+  card.innerHTML = '<div class="result-label">📊 AI査定結果</div>' +
+    '<div class="result-price">' + fmtPrice(low) + '〜' + fmtPrice(high) + ' 万円</div>' +
+    '<div class="result-note">※ 中央値: 約' + fmtPrice(price) + '万円<br>' +
+    '※ 過去の取引データと市場動向に基づく概算です。<br>正確な査定は不動産会社にご相談ください。</div>';
+  chatBody.appendChild(card);
+  chatBody.scrollTop = chatBody.scrollHeight;
+  await new Promise(r => setTimeout(r, 600));
+  await addMsg('ご利用ありがとうございました！🙏\nより正確な査定をご希望でしたら、お気軽にお問い合わせください。', 'bot');
+}
+
+async function handleAnswer(text) {
+  const opts = chatBody.querySelectorAll('.msg-options');
+  opts.forEach(o => o.remove());
+  hideInput();
+  await addMsg(text, 'user');
+
+  if (flow[step] && flow[step].key) answers[flow[step].key] = text;
+  step++;
+
+  if (step >= flow.length) {
+    await showResult();
+    return;
+  }
+
+  showTyping();
+  await new Promise(r => setTimeout(r, 700));
+  removeTyping();
+  await addMsg(flow[step].bot, 'bot');
+  if (flow[step].options) addOptions(flow[step].options);
+  if (flow[step].input) showInput();
+}
+
+chatSendBtn.addEventListener('click', () => { const v = chatInput.value.trim(); if (v) handleAnswer(v); });
+chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') { const v = chatInput.value.trim(); if (v) handleAnswer(v); } });
+
+async function startChat() {
+  await new Promise(r => setTimeout(r, 600));
+  showTyping();
+  await new Promise(r => setTimeout(r, 1000));
+  removeTyping();
+  await addMsg(flow[0].bot, 'bot');
+  step = 1;
+  showTyping();
+  await new Promise(r => setTimeout(r, 500));
+  removeTyping();
+  await addMsg(flow[1].bot, 'bot');
+  addOptions(flow[1].options);
+}
+startChat();
+</script>
+
 </body>
 </html>
