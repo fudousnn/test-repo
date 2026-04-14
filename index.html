@@ -3,6 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="大阪の不動産、いくらで売れてる？ 営業電話なし・メアド不要。チャットで5つの質問に答えるだけで、近隣の売却事例をもとに概算価格をお伝えします。大阪市北区のアイスティ不動産。">
+  <meta property="og:title" content="大阪の不動産、いくらで売れてる？ | アイスティ不動産">
+  <meta property="og:description" content="営業電話なし・メアド不要。チャットで5つの質問に答えるだけで、近隣の売却事例をもとに概算価格をお伝えします。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fudousnn.github.io/test-repo/">
+  <meta property="og:image" content="https://aisti.jp/images/logo2.png">
+  <meta property="og:site_name" content="アイスティ不動産">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="大阪の不動産、いくらで売れてる？ | アイスティ不動産">
+  <meta name="twitter:description" content="営業電話なし・メアド不要。チャットで概算価格をお伝えします。">
+  <link rel="icon" href="https://aisti.jp/favicon.ico" type="image/x-icon">
   <title>大阪の不動産、いくらで売れてる？ | アイスティ不動産</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -615,7 +627,7 @@
       <div class="flow-step-line"><div class="flow-num">2</div><div class="flow-connector"></div></div>
       <div class="flow-content">
         <h3>エリアと広さをざっくり回答</h3>
-        <p>「東京23区・65平米・築15年」くらいの情報でOKです。</p>
+        <p>「大阪市北区・65平米・築15年」くらいの情報でOKです。</p>
       </div>
     </div>
     <div class="flow-step">
@@ -826,7 +838,7 @@ async function showResult() {
     qr.className = 'desktop-qr-wrap';
     qr.innerHTML =
       '<p>PCからはQRコードでLINE登録できます</p>' +
-      '<div class="desktop-qr-placeholder">QRコード<br>（要設定）</div>' +
+      '<img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://lin.ee/Zf08Eym" alt="LINE QRコード" width="140" height="140" style="border-radius:8px;margin-bottom:12px;">' +
       '<a href="' + LINE_URL + '" target="_blank" style="font-size:0.8rem; color:var(--primary);">ブラウザからLINEを開く</a>';
     chatBody.appendChild(qr);
     chatBody.scrollTop = chatBody.scrollHeight;
