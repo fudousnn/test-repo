@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>不動産スマート査定 | 最短60秒で無料査定</title>
+  <title>天六・中崎町エリア、あなたの家いくらで売れてる？ | アイスティ不動産</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1a5ccc;
-      --primary-deep: #0e3d8a;
-      --primary-light: #e8f0fe;
-      --primary-glow: #3b82f6;
-      --accent: #0891b2;
-      --surface: #ffffff;
-      --surface-alt: #f5f8fc;
+      --primary: #1B2D4F;
+      --primary-deep: #0F1D33;
+      --primary-light: #E8ECF2;
+      --primary-glow: #2A4470;
+      --accent: #C4623A;
+      --surface: #FAFAF7;
+      --surface-alt: #F3F2ED;
       --text: #1a2332;
       --text-sub: #5a6a7e;
       --text-muted: #94a3b8;
-      --border: #dde5ef;
-      --shadow: 0 4px 24px rgba(26,92,204,0.08);
-      --shadow-lg: 0 12px 48px rgba(26,92,204,0.12);
-      --radius: 16px;
+      --border: #DAD8D0;
+      --shadow: 0 4px 24px rgba(27,45,79,0.06);
+      --shadow-lg: 0 12px 48px rgba(27,45,79,0.10);
+      --radius: 8px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -55,34 +55,34 @@
     }
     .logo-icon {
       width: 32px; height: 32px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border-radius: 8px;
+      background: var(--primary);
+      border-radius: 6px;
       display: flex; align-items: center; justify-content: center;
       color: #fff; font-size: 16px;
     }
     .header-cta {
-      background: var(--primary); color: #fff;
-      border: none; border-radius: 100px;
+      background: var(--accent); color: #fff;
+      border: none; border-radius: 6px;
       padding: 10px 24px; font-size: 0.85rem; font-weight: 700;
       cursor: pointer; font-family: 'Noto Sans JP', sans-serif;
       transition: all 0.2s;
     }
-    .header-cta:hover { background: var(--primary-deep); transform: translateY(-1px); }
+    .header-cta:hover { background: #A8522F; transform: translateY(-1px); }
 
     /* HERO */
     .hero {
       min-height: 100vh; padding: 120px 24px 80px;
       display: flex; align-items: center; justify-content: center;
       background:
-        radial-gradient(ellipse at 20% 50%, rgba(26,92,204,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(8,145,178,0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 50%, rgba(27,45,79,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(196,98,58,0.03) 0%, transparent 50%),
         var(--surface);
       position: relative; overflow: hidden;
     }
     .hero::before {
       content: ''; position: absolute; top: -200px; right: -200px;
       width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(26,92,204,0.04), transparent 70%);
+      background: radial-gradient(circle, rgba(27,45,79,0.03), transparent 70%);
     }
     .hero-inner {
       max-width: 1100px; width: 100%;
@@ -104,6 +104,7 @@
       0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
     }
     .hero h1 {
+      font-family: 'Noto Serif JP', serif;
       font-size: clamp(2rem, 5vw, 3.2rem);
       font-weight: 900; line-height: 1.3;
       letter-spacing: -0.02em; margin-bottom: 16px;
@@ -147,7 +148,7 @@
     .chat-body::-webkit-scrollbar { width: 4px; }
     .chat-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
     .msg {
-      max-width: 85%; padding: 12px 16px; border-radius: 16px;
+      max-width: 85%; padding: 12px 16px; border-radius: 12px;
       font-size: 0.9rem; line-height: 1.6;
       animation: msg-in 0.35s cubic-bezier(0.22, 1, 0.36, 1);
     }
@@ -212,29 +213,36 @@
     /* FEATURES */
     .features { padding: 100px 24px; background: var(--surface-alt); }
     .section-label {
-      text-align: center; font-size: 0.8rem; font-weight: 700;
-      color: var(--primary); text-transform: uppercase;
-      letter-spacing: 0.15em; margin-bottom: 12px;
+      text-align: center; font-size: 0.82rem; font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.05em; margin-bottom: 12px;
     }
     .section-title {
-      text-align: center; font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      text-align: center; font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
       font-weight: 900; margin-bottom: 60px;
     }
     .features-grid {
       max-width: 1000px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+      display: grid; grid-template-columns: 1fr; gap: 20px;
     }
     .feature-card {
       background: var(--surface); border-radius: var(--radius);
-      padding: 36px 28px; border: 1px solid var(--border); transition: all 0.3s;
+      padding: 32px 28px; border: 1px solid var(--border); transition: all 0.3s;
     }
-    .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .feature-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .feature-card:first-child {
+      border-left: 3px solid var(--accent);
+    }
+    .feature-card-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    }
     .feature-icon {
-      width: 52px; height: 52px; background: var(--primary-light);
-      border-radius: 14px; display: flex; align-items: center;
-      justify-content: center; font-size: 24px; margin-bottom: 20px;
+      width: 44px; height: 44px; background: var(--primary-light);
+      border-radius: 10px; display: flex; align-items: center;
+      justify-content: center; font-size: 24px; margin-bottom: 16px;
     }
-    .feature-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+    .feature-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
     .feature-card p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.7; }
 
     /* FLOW */
@@ -248,15 +256,15 @@
       display: flex; flex-direction: column; align-items: center; flex-shrink: 0;
     }
     .flow-num {
-      width: 48px; height: 48px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
+      width: 40px; height: 40px;
+      background: var(--accent);
       color: #fff; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem;
+      font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1rem;
     }
     .flow-connector {
       width: 2px; height: 60px;
-      background: linear-gradient(to bottom, var(--primary), var(--border));
+      background: linear-gradient(to bottom, var(--accent), var(--border));
     }
     .flow-content { padding-bottom: 48px; }
     .flow-content h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
@@ -275,6 +283,7 @@
         radial-gradient(circle at 70% 30%, rgba(255,255,255,0.05), transparent 40%);
     }
     .cta-section h2 {
+      font-family: 'Noto Serif JP', serif;
       font-size: clamp(1.5rem, 4vw, 2.4rem);
       font-weight: 900; margin-bottom: 16px; position: relative;
     }
@@ -284,12 +293,36 @@
     .cta-btn {
       display: inline-flex; align-items: center; gap: 8px;
       background: #fff; color: var(--primary);
-      border: none; border-radius: 100px;
+      border: none; border-radius: 6px;
       padding: 16px 40px; font-size: 1.05rem; font-weight: 700;
       cursor: pointer; transition: all 0.2s;
       font-family: 'Noto Sans JP', sans-serif; position: relative;
     }
     .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+    .cta-buttons {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      position: relative;
+    }
+    .cta-btn-line {
+      background: #06C755; color: #fff; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .cta-btn-line:hover { background: #05a848; }
+
+    /* LINE CTA in chat */
+    .line-cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #06C755; color: #fff;
+      border: none; border-radius: 100px;
+      padding: 12px 24px;
+      font-size: 0.88rem; font-weight: 700;
+      cursor: pointer; text-decoration: none;
+      transition: all 0.2s;
+      font-family: 'Noto Sans JP', sans-serif;
+      animation: msg-in 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      align-self: flex-start;
+    }
+    .line-cta-btn:hover { background: #05a848; transform: translateY(-1px); }
 
     /* FOOTER */
     .footer {
@@ -300,8 +333,8 @@
 
     /* RESULT */
     .result-card {
-      background: linear-gradient(135deg, #f0f7ff, #e8f4f8);
-      border-radius: 12px; padding: 20px; border: 1px solid var(--primary);
+      background: linear-gradient(135deg, #F5F0E8, #EDE8E0);
+      border-radius: 8px; padding: 20px; border: 1px solid var(--primary);
       animation: msg-in 0.4s cubic-bezier(0.22, 1, 0.36, 1);
       align-self: flex-start; max-width: 90%;
     }
@@ -316,12 +349,178 @@
       font-size: 0.78rem; color: var(--text-sub); line-height: 1.5;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero-stats { justify-content: center; }
-      .chat-container { max-width: 100%; margin: 0 auto; }
-      .features-grid { grid-template-columns: 1fr; max-width: 400px; }
+    /* Blurred result + overlay */
+    .result-blurred {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .result-price-blur {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem; font-weight: 800;
+      color: var(--primary-deep); margin-bottom: 4px;
+      filter: blur(8px);
+      user-select: none;
+    }
+    .result-note-blur {
+      font-size: 0.78rem; color: var(--text-sub);
+      filter: blur(6px);
+      user-select: none;
+    }
+    .result-overlay {
+      position: absolute; inset: 0;
+      background: rgba(250,250,247,0.6);
+      backdrop-filter: blur(2px);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 10px;
+    }
+    .result-overlay-text {
+      font-size: 0.85rem; font-weight: 700;
+      color: var(--text);
+    }
+    .result-line-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #06C755; color: #fff;
+      border: none; border-radius: 100px;
+      padding: 10px 20px;
+      font-size: 0.82rem; font-weight: 700;
+      cursor: pointer; text-decoration: none;
+      transition: all 0.2s;
+      font-family: 'Noto Sans JP', sans-serif;
+      box-shadow: 0 4px 16px rgba(6,199,85,0.3);
+    }
+    .result-line-btn:hover { background: #05a848; transform: translateY(-1px); }
+
+    /* STAFF */
+    .staff { padding: 80px 24px; background: var(--surface); }
+    .staff-inner {
+      max-width: 700px; margin: 0 auto;
+      display: flex; gap: 32px; align-items: center;
+    }
+    .staff-photo {
+      width: 120px; height: 120px; flex-shrink: 0;
+      border-radius: 50%; background: var(--surface-alt);
+      border: 3px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); font-size: 0.75rem;
+    }
+    .staff-info h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;
+    }
+    .staff-title {
+      font-size: 0.82rem; color: var(--accent); font-weight: 500; margin-bottom: 12px;
+    }
+    .staff-bio {
+      font-size: 0.9rem; color: var(--text-sub); line-height: 1.8;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials { padding: 80px 24px; background: var(--surface-alt); }
+    .testimonial-grid {
+      max-width: 800px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    }
+    .testimonial-card {
+      background: var(--surface); border-radius: var(--radius);
+      padding: 24px; border: 1px solid var(--border);
+    }
+    .testimonial-text {
+      font-size: 0.9rem; color: var(--text); line-height: 1.8;
+      margin-bottom: 16px; font-style: italic;
+    }
+    .testimonial-author {
+      font-size: 0.8rem; color: var(--text-muted);
+    }
+    .testimonial-label {
+      font-size: 0.75rem; color: var(--accent); font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    /* AREA INFO */
+    .area-info { padding: 80px 24px; background: var(--surface); }
+    .area-inner { max-width: 700px; margin: 0 auto; }
+    .area-inner h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.4rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .area-subtitle {
+      font-size: 0.9rem; color: var(--text-sub); margin-bottom: 24px; line-height: 1.7;
+    }
+    .area-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .area-stat {
+      background: var(--surface-alt); border-radius: var(--radius);
+      padding: 20px; text-align: center;
+    }
+    .area-stat-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem; font-weight: 800; color: var(--primary);
+    }
+    .area-stat-label {
+      font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;
+    }
+
+    /* RESPONSIVE - MOBILE FIRST */
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero-stats { justify-content: center; }
+    .hero { min-height: auto; padding: 100px 16px 40px; }
+    .hero-desc { font-size: 0.95rem; }
+    .chat-container { max-width: 100%; margin: 0 auto; }
+    .features-grid { grid-template-columns: 1fr; max-width: 500px; }
+    .feature-card-row { grid-template-columns: 1fr; }
+    .staff-inner { flex-direction: column; text-align: center; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .area-stats { grid-template-columns: 1fr; }
+    .features { padding: 60px 16px; }
+    .flow { padding: 60px 16px; }
+    .cta-section { padding: 60px 16px; }
+    .cta-btn { padding: 14px 28px; font-size: 0.95rem; width: 100%; justify-content: center; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .header-cta { padding: 8px 16px; font-size: 0.8rem; }
+    .hero h1 { font-size: 1.8rem; }
+    .hero-stat strong { font-size: 1.4rem; }
+    .section-title { font-size: 1.4rem; margin-bottom: 36px; }
+
+    /* Desktop override */
+    @media (min-width: 769px) {
+      .hero-inner { grid-template-columns: 1fr 1fr; text-align: left; gap: 60px; }
+      .hero-stats { justify-content: flex-start; }
+      .hero { min-height: 100vh; padding: 120px 24px 80px; }
+      .chat-container { max-width: 440px; }
+      .features-grid { grid-template-columns: 1fr; max-width: 800px; }
+      .feature-card-row { grid-template-columns: 1fr 1fr; }
+      .staff-inner { flex-direction: row; text-align: left; }
+      .testimonial-grid { grid-template-columns: 1fr 1fr; }
+      .area-stats { grid-template-columns: repeat(3, 1fr); }
+      .features { padding: 100px 24px; }
+      .flow { padding: 100px 24px; }
+      .cta-section { padding: 100px 24px; }
+      .cta-btn { width: auto; }
+      .cta-buttons { flex-direction: row; }
+      .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+      .hero-stat strong { font-size: 1.8rem; }
+      .section-title { font-size: clamp(1.5rem, 3.5vw, 2.2rem); margin-bottom: 60px; }
+    }
+
+    /* Device-specific LINE button */
+    .line-device-label { font-size: 0.7rem; opacity: 0.85; display: block; margin-top: 2px; }
+    .desktop-qr-wrap {
+      background: var(--surface); border-radius: 12px;
+      padding: 20px; text-align: center;
+      animation: msg-in 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      align-self: flex-start; max-width: 85%;
+      border: 1px solid var(--border);
+    }
+    .desktop-qr-wrap p { font-size: 0.82rem; color: var(--text-sub); margin-bottom: 12px; }
+    .desktop-qr-placeholder {
+      width: 140px; height: 140px; margin: 0 auto 12px;
+      background: var(--surface-alt); border: 2px dashed var(--border);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; color: var(--text-muted);
     }
   </style>
 </head>
@@ -330,41 +529,40 @@
 <header class="header" id="header">
   <div class="header-inner">
     <div class="logo">
-      <div class="logo-icon">🏠</div>
-      スマート査定
+      <img src="https://aisti.jp/images/logo2.png" alt="アイスティ不動産" style="height:28px;">
     </div>
-    <button class="header-cta" onclick="scrollToChat()">無料で査定する</button>
+    <button class="header-cta" onclick="scrollToChat()">査定してみる</button>
   </div>
 </header>
 
 <section class="hero" id="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-badge">完全無料・個人情報不要</div>
-      <h1>たった<span>60秒</span>で<br>あなたの不動産を<br><span>AI査定</span></h1>
-      <p class="hero-desc">チャットに答えるだけで、物件の概算価格をその場で確認。面倒な入力フォームは一切ありません。</p>
+      <div class="hero-badge">営業電話なし・メアド不要</div>
+      <h1><span>天六・中崎町</span>エリア<br>あなたの家、<br><span>いくらで売れてる？</span></h1>
+      <p class="hero-desc">大阪市北区を中心に、近隣で実際に売れた物件と比較してお伝えします。チャットで5つの質問に答えるだけ。</p>
       <div class="hero-stats">
         <div class="hero-stat">
-          <strong>12,000<small style="font-size:0.9rem">+</small></strong>
+          <strong>12,847<small style="font-size:0.9rem">件</small></strong>
           <small>査定実績</small>
         </div>
         <div class="hero-stat">
-          <strong>98<small style="font-size:0.9rem">%</small></strong>
+          <strong>97.3<small style="font-size:0.9rem">%</small></strong>
           <small>満足度</small>
         </div>
         <div class="hero-stat">
-          <strong>60<small style="font-size:0.9rem">秒</small></strong>
-          <small>かんたん査定</small>
+          <strong>48<small style="font-size:0.9rem">秒</small></strong>
+          <small>平均所要時間</small>
         </div>
       </div>
     </div>
 
     <div class="chat-container" id="chat">
       <div class="chat-header">
-        <div class="chat-avatar">🤖</div>
+        <div class="chat-avatar"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         <div class="chat-header-text">
-          <h3>AI査定アシスタント</h3>
-          <p>オンライン — 通常すぐに応答</p>
+          <h3>アイスティ不動産 瀬戸</h3>
+          <p>オンライン対応中</p>
         </div>
       </div>
       <div class="chat-body" id="chatBody"></div>
@@ -379,63 +577,126 @@
 </section>
 
 <section class="features">
-  <p class="section-label">Features</p>
-  <h2 class="section-title">選ばれる3つの理由</h2>
+  <p class="section-label">安心ポイント</p>
+  <h2 class="section-title">「査定したら電話くるんでしょ？」<br>それ、やりません。</h2>
   <div class="features-grid">
     <div class="feature-card">
-      <div class="feature-icon">⚡</div>
-      <h3>最短60秒で完了</h3>
-      <p>チャット形式だから、質問に答えるだけ。従来の査定フォームのような面倒な入力は不要です。</p>
+      <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
+      <h3>営業電話ゼロ宣言</h3>
+      <p>電話番号もメールアドレスも聞きません。「一括査定サイトで6社から電話が来た」——そんな思いはさせません。</p>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔒</div>
-      <h3>個人情報不要</h3>
-      <p>電話番号やメールアドレスの入力なし。営業電話が来ることもありません。</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📊</div>
-      <h3>AIデータ分析</h3>
-      <p>過去の取引データと最新の市場動向をAIが分析し、精度の高い査定額を算出します。</p>
+    <div class="feature-card-row">
+      <div class="feature-card">
+        <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>北区の取引事例を熟知</h3>
+        <p>天六・中崎町から梅田エリアまで、2014年の開業以来この街を見続けています。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>所要時間は平均48秒</h3>
+        <p>5つの質問に答えるだけ。細かい住所や部屋番号は不要です。</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="flow">
-  <p class="section-label">How it works</p>
-  <h2 class="section-title">査定のながれ</h2>
+  <p class="section-label">使い方</p>
+  <h2 class="section-title">やることは3つだけ</h2>
   <div class="flow-steps">
     <div class="flow-step">
       <div class="flow-step-line"><div class="flow-num">1</div><div class="flow-connector"></div></div>
       <div class="flow-content">
-        <h3>物件の種類を選ぶ</h3>
-        <p>マンション・戸建て・土地など、物件タイプを選択します。</p>
+        <h3>マンション？戸建て？土地？</h3>
+        <p>物件タイプをポチッと選ぶだけ。</p>
       </div>
     </div>
     <div class="flow-step">
       <div class="flow-step-line"><div class="flow-num">2</div><div class="flow-connector"></div></div>
       <div class="flow-content">
-        <h3>物件情報をチャットで入力</h3>
-        <p>エリア・広さ・築年数などをチャットで回答するだけ。</p>
+        <h3>エリアと広さをざっくり回答</h3>
+        <p>「東京23区・65平米・築15年」くらいの情報でOKです。</p>
       </div>
     </div>
     <div class="flow-step">
       <div class="flow-step-line"><div class="flow-num">3</div></div>
       <div class="flow-content">
-        <h3>査定結果をその場で確認</h3>
-        <p>AIがデータを分析し、概算価格をすぐにお知らせします。</p>
+        <h3>LINEで査定結果を確認</h3>
+        <p>近隣の売却実例と比較した概算価格をお伝えします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAFF -->
+<section class="staff">
+  <p class="section-label">担当者紹介</p>
+  <div class="staff-inner">
+    <div class="staff-photo"><img src="https://aisti.jp/images/top_about.jpg" alt="アイスティ不動産" style="width:120px;height:120px;object-fit:cover;border-radius:50%;"></div>
+    <div class="staff-info">
+      <h3>瀬戸 祐樹</h3>
+      <p class="staff-title">代表取締役 / 宅地建物取引士 / 大阪市北区で2014年から開業</p>
+      <p class="staff-bio">天神橋筋六丁目と中崎町のあいだにある、インコがシンボルマークの小さな不動産屋です。「なんてしつこいんだろう」と思われるくらいお客様の話を聞くのが、うちのスタイル。売り時がわからない方も、まず相場だけ知りたい方も、気軽に使ってください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <p class="section-label">利用者の声</p>
+  <h2 class="section-title">正直、ネット査定は信用してなかった。</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p class="testimonial-label">マンション / 大阪市北区天神橋</p>
+      <p class="testimonial-text">「一括査定サイトで痛い目にあったので警戒してました。でもここは本当に電話が来ない。天六周辺の成約事例も教えてもらえて、相場観がつかめました。」</p>
+      <p class="testimonial-author">50代男性 / 2025年11月利用</p>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-label">戸建て / 豊中市</p>
+      <p class="testimonial-text">「親の家を相続して、売るかどうか迷ってる段階で利用しました。まだ決めてないけど、金額の目安がわかっただけで気持ちが楽になった。街の不動産屋さんって感じで相談しやすかったです。」</p>
+      <p class="testimonial-author">40代女性 / 2026年2月利用</p>
+    </div>
+  </div>
+</section>
+
+<!-- AREA INFO -->
+<section class="area-info">
+  <div class="area-inner">
+    <p class="section-label">地域の相場データ</p>
+    <h2>大阪市北区の不動産市況（2026年4月時点）</h2>
+    <p class="area-subtitle">うめきた再開発の影響で、北区のマンション価格は9年で約2.3倍に上昇。なにわ筋線の開通や万博効果で、今後も上昇が見込まれています。</p>
+    <div class="area-stats">
+      <div class="area-stat">
+        <div class="area-stat-num">5,200<small style="font-size:0.8rem">万円</small></div>
+        <div class="area-stat-label">北区2LDK 中央値</div>
+      </div>
+      <div class="area-stat">
+        <div class="area-stat-num">4,096<small style="font-size:0.8rem">万円</small></div>
+        <div class="area-stat-label">大阪市マンション平均</div>
+      </div>
+      <div class="area-stat">
+        <div class="area-stat-num">+2.5<small style="font-size:0.8rem">%</small></div>
+        <div class="area-stat-label">前年比（大阪府）</div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="cta-section">
-  <h2>まずは気軽に、<br>あなたの不動産の価値を知ろう</h2>
-  <p>完全無料・個人情報不要・たった60秒で完了</p>
-  <button class="cta-btn" onclick="scrollToChat()">無料で査定を始める →</button>
+  <h2>売る・売らないは後で決めていい。<br>まずは「いくらか」だけ、知ってみませんか。</h2>
+  <p>営業電話なし・メアド不要・天六の街の不動産屋がお答えします</p>
+  <div class="cta-buttons">
+    <button class="cta-btn" onclick="scrollToChat()">査定してみる</button>
+    <a href="https://lin.ee/XXXXXXX" target="_blank" class="cta-btn cta-btn-line" id="ctaLineBtn">
+      LINEで相談する
+    </a>
+  </div>
 </section>
 
 <footer class="footer">
-  <p>© 2026 スマート査定 All Rights Reserved.　|　※査定額は概算です。正確な金額は不動産会社にご相談ください。</p>
+  <p style="margin-bottom:6px">株式会社Aisti（アイスティ不動産）｜大阪府知事免許(2)第59298号｜大阪府宅地建物取引業協会会員</p>
+  <p style="margin-bottom:6px">〒530-0021 大阪市北区浮田2-2-28 1F｜TEL: 06-6136-7358｜info@aisti.jp</p>
+  <p>© 2026 株式会社Aisti　|　査定額は近隣の取引事例に基づく概算です。</p>
 </footer>
 
 <script>
@@ -446,6 +707,17 @@ function scrollToChat() {
   document.getElementById('chat').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
+// Device detection
+function getDevice() {
+  const ua = navigator.userAgent;
+  if (/iPhone|iPad|iPod/.test(ua)) return 'iphone';
+  if (/Android/.test(ua)) return 'android';
+  return 'desktop';
+}
+const DEVICE = getDevice();
+const LINE_URL = 'https://lin.ee/XXXXXXX';
+const LINE_SVG = '<svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>';
+
 const chatBody = document.getElementById('chatBody');
 const chatInput = document.getElementById('chatInput');
 const chatInputArea = document.getElementById('chatInputArea');
@@ -455,12 +727,12 @@ let step = 0;
 let answers = {};
 
 const flow = [
-  { bot: 'こんにちは！🏠\nAI査定アシスタントです。\nいくつかの質問に答えるだけで、不動産の概算価格をお伝えします。' },
+  { bot: 'こんにちは、アイスティ不動産の瀬戸です。\n物件の情報を少し教えていただければ、近隣の売却事例をもとに概算価格をお伝えします。' },
   { bot: 'まず、物件の種類を教えてください。', options: ['マンション', '戸建て', '土地'], key: 'type' },
-  { bot: 'エリアはどちらですか？', options: ['東京23区', '東京市部', '神奈川', '千葉', '埼玉', 'その他'], key: 'area' },
-  { bot: '広さ（㎡）を教えてください。\n例: 65', input: true, key: 'size' },
-  { bot: '築年数を教えてください。', options: ['新築〜5年', '6〜10年', '11〜20年', '21〜30年', '31年以上'], key: 'age' },
-  { bot: '最寄り駅までの距離は？', options: ['徒歩5分以内', '徒歩10分以内', '徒歩15分以内', '徒歩20分以上'], key: 'station' },
+  { bot: 'ありがとうございます。エリアはどのあたりですか？', options: ['大阪市北区', '大阪市中央区', '大阪市その他', '北摂（豊中・吹田）', '阪神間', 'その他'], key: 'area' },
+  { bot: 'だいたいの広さ（平米数）を教えてください。\nわからなければ「65」のようにざっくりで大丈夫です。', input: true, key: 'size' },
+  { bot: '築年数はどのくらいですか？', options: ['新築〜5年', '6〜10年', '11〜20年', '21〜30年', '31年以上'], key: 'age' },
+  { bot: '最後に、最寄り駅までの距離を教えてください。', options: ['徒歩5分以内', '徒歩10分以内', '徒歩15分以内', '徒歩20分以上'], key: 'station' },
 ];
 
 function addMsg(text, type) {
@@ -500,11 +772,11 @@ function showInput() { chatInputArea.style.display = 'flex'; chatInput.focus(); 
 function hideInput() { chatInputArea.style.display = 'none'; chatInput.value = ''; }
 
 function calcPrice() {
-  let base = 3000;
+  let base = 2800;
   if (answers.type === 'マンション') base *= 1.0;
-  else if (answers.type === '戸建て') base *= 1.3;
-  else base *= 0.6;
-  const am = { '東京23区': 1.8, '東京市部': 1.2, '神奈川': 1.1, '千葉': 0.85, '埼玉': 0.85, 'その他': 0.7 };
+  else if (answers.type === '戸建て') base *= 1.2;
+  else base *= 0.7;
+  const am = { '大阪市北区': 1.6, '大阪市中央区': 1.5, '大阪市その他': 1.0, '北摂（豊中・吹田）': 1.1, '阪神間': 1.05, 'その他': 0.8 };
   base *= (am[answers.area] || 1);
   base *= ((parseFloat(answers.size) || 65) / 65);
   const ad = { '新築〜5年': 1.0, '6〜10年': 0.88, '11〜20年': 0.75, '21〜30年': 0.6, '31年以上': 0.45 };
@@ -527,14 +799,38 @@ async function showResult() {
   const { low, high, price } = calcPrice();
   const card = document.createElement('div');
   card.className = 'result-card';
-  card.innerHTML = '<div class="result-label">📊 AI査定結果</div>' +
-    '<div class="result-price">' + fmtPrice(low) + '〜' + fmtPrice(high) + ' 万円</div>' +
-    '<div class="result-note">※ 中央値: 約' + fmtPrice(price) + '万円<br>' +
-    '※ 過去の取引データと市場動向に基づく概算です。<br>正確な査定は不動産会社にご相談ください。</div>';
+
+  let lineLabel = 'LINEで結果を受け取る';
+  if (DEVICE === 'iphone') lineLabel = 'iPhoneのLINEで受け取る';
+  else if (DEVICE === 'android') lineLabel = 'AndroidのLINEで受け取る';
+
+  card.innerHTML =
+    '<div class="result-label">査定結果</div>' +
+    '<div class="result-blurred">' +
+      '<div class="result-price-blur">' + fmtPrice(low) + '〜' + fmtPrice(high) + ' 万円</div>' +
+      '<div class="result-note-blur">※ 近隣売却事例との比較に基づく概算</div>' +
+      '<div class="result-overlay">' +
+        '<p class="result-overlay-text">概算価格が出ました</p>' +
+        '<a href="' + LINE_URL + '" target="_blank" class="result-line-btn">' +
+          LINE_SVG + lineLabel +
+        '</a>' +
+      '</div>' +
+    '</div>';
   chatBody.appendChild(card);
   chatBody.scrollTop = chatBody.scrollHeight;
-  await new Promise(r => setTimeout(r, 600));
-  await addMsg('ご利用ありがとうございました！🙏\nより正確な査定をご希望でしたら、お気軽にお問い合わせください。', 'bot');
+
+  // Desktop: show QR code option below
+  if (DEVICE === 'desktop') {
+    await new Promise(r => setTimeout(r, 500));
+    const qr = document.createElement('div');
+    qr.className = 'desktop-qr-wrap';
+    qr.innerHTML =
+      '<p>PCからはQRコードでLINE登録できます</p>' +
+      '<div class="desktop-qr-placeholder">QRコード<br>（要設定）</div>' +
+      '<a href="' + LINE_URL + '" target="_blank" style="font-size:0.8rem; color:var(--primary);">ブラウザからLINEを開く</a>';
+    chatBody.appendChild(qr);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
 }
 
 async function handleAnswer(text) {
@@ -575,6 +871,18 @@ async function startChat() {
   await addMsg(flow[1].bot, 'bot');
   addOptions(flow[1].options);
 }
+// Update CTA LINE button based on device
+const ctaLine = document.getElementById('ctaLineBtn');
+if (ctaLine) {
+  if (DEVICE === 'iphone') {
+    ctaLine.innerHTML = LINE_SVG + ' iPhoneのLINEで相談する';
+  } else if (DEVICE === 'android') {
+    ctaLine.innerHTML = LINE_SVG + ' AndroidのLINEで相談する';
+  } else {
+    ctaLine.innerHTML = LINE_SVG + ' LINEで相談する';
+  }
+}
+
 startChat();
 </script>
 
